@@ -11,14 +11,14 @@
 
 # 注意：脚本目录和WorkSpace目录在同一个目录
 # 工程名字(Target名字)
-Project_Name = "Target名字,系统默认等于工程名字"
+Project_Name = "Demo"
 # workspace的名字
-Workspace_Name = "WorkSpace名字"
+Workspace_Name = "${Project_Name}.xcworkspace"
 # 配置环境，Release或者Debug,默认release
 Configuration = "Debug"
 
 # Bundle ID
-BUNDLE_ID = "com.xxxx"
+BUNDLE_ID = "com.xxx"
 
 # 签名
 SIGN_IDENTITY = ""
@@ -36,3 +36,6 @@ xcodebuild -workspace $Workspace_Name.xcworkspace -scheme $Project_Name -configu
 echo "xcodebuild -exportArchive -archivePath build/$Project_Name.xcarchive -exportOptionsPlist ${INFO_PLIST} -exportPath ~/Desktop/$Project_Name.ipa"
 
 xcodebuild -exportArchive -archivePath build/$Project_Name.xcarchive -exportOptionsPlist ${INFO_PLIST} -exportPath ~/Desktop/$Project_Name.ipa
+
+
+# 签名和描述文件的获取参考 https://www.jianshu.com/p/722adedaa3bf
